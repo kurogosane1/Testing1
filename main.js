@@ -59,6 +59,7 @@ async function getUsers() {
   table.appendChild(tableHeadingContainer);
   table.appendChild(list);
   container.appendChild(table);
+
   app.appendChild(container);
 }
 
@@ -66,18 +67,34 @@ getUsers();
 
 // Now to get the user Posts with the id provided
 async function userPost(number) {
-  let parameter = posts + "/" + number;
+  const el = document.querySelector("mainContainer");
+
+  let parameter = posts + "?userId=" + number;
+
   let info = await getData(API, parameter);
+
   console.log(info);
+
+  //Go Back Button
+  const backButton = document.createElement("button");
+  backButton.classList.add("back");
+  backButton.textContent = "Go back";
+  backButton.addEventListener("click", function (e) {
+    app.removeChild(MainContainer);
+  });
+
   // Now to setup the container
   //Post Main Container
   const MainContainer = document.createElement("div");
   MainContainer.classList.add("mainContainer");
 
+  MainContainer.appendChild(backButton);
+
   info.map((post) => {
     // Post Container
     const postContainer = document.createElement("div");
     postContainer.classList.add("postContainer");
+    postContainer.id = post.id;
 
     // Posts Title
     const postTitle = document.createElement("span");
@@ -86,5 +103,15 @@ async function userPost(number) {
     // Post Body
     const postBody = document.createElement("p");
     postBody.className = "postBody";
+
+    postTitle.innerHTML = post.title;
+    postBody.innerHTML = post.body;
+    postContainer.appendChild(postTitle);
+    postContainer.appendChild(postBody);
+    MainContainer.appendChild(postContainer);
   });
+
+  app.appendChild(MainContainer);
+
+  console.log(app);
 }
