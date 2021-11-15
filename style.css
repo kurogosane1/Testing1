@@ -8,7 +8,7 @@ html {
   font-size: 18px;
 }
 .container {
-  background: grey;
+
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -61,7 +61,7 @@ html {
   border-top-right-radius: 20px;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  background-color: rgb(43, 125, 226);
   color: white;
 }
 .list {
@@ -90,7 +90,80 @@ html {
   /* border-radius: 20px; */
   /* border-bottom: none; */
 }
+.list > span:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 
 .hide {
   display: none;
+}
+
+/* Styling the post page */
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.subContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: stretch;
+  height: 100%;
+  /* background-color: red; */
+}
+
+.postContainer {
+  /* flex: 1; */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px 20px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(43, 125, 226);
+}
+
+.postTitle {
+  font-weight: 900;
+}
+.postBody {
+  font-weight: 200;
+  color: rgb(235, 235, 235);
+}
+
+.back {
+  font-family: "Raleway", sans-serif;
+  cursor: pointer;
+  color: rgb(235, 235, 235);
+  padding: 15px 25px;
+  font-size: 16px;
+  border-radius: 50px;
+  border: none;
+
+  background: linear-gradient(315deg, #2e86f2, #2771cb);
+  /* box-shadow: -20px -20px 60px #2b7ce0, 20px 20px 60px #2b7ee4; */
+}
+
+.back:focus {
+  cursor: pointer;
+  color: white;
+  border-radius: 50px;
+  background: #6698d6;
+  box-shadow: inset -20px -20px 60px #6596d4, inset 20px 20px 60px #679ad8;
 }

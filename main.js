@@ -69,15 +69,15 @@ getUsers();
 // Now to get the user Posts with the id provided
 async function userPost(number) {
   const el = document.querySelector(".userContainer");
-  let parameter = posts + "?userId=" + number;
   el.classList.add("hide");
-  console.log(el);
+
+  let parameter = posts + "?userId=" + number;
   let info = await getData(API, parameter);
 
   //Go Back Button
   const backButton = document.createElement("button");
   backButton.classList.add("back");
-  backButton.textContent = "Go back";
+  backButton.textContent = "Back";
   backButton.addEventListener("click", function (e) {
     app.removeChild(MainContainer);
     el.classList.remove("hide");
@@ -87,6 +87,9 @@ async function userPost(number) {
   //Post Main Container
   const MainContainer = document.createElement("div");
   MainContainer.classList.add("mainContainer");
+
+  const SubContainer = document.createElement("div");
+  SubContainer.classList.add("subContainer");
 
   MainContainer.appendChild(backButton);
 
@@ -104,15 +107,15 @@ async function userPost(number) {
     const postBody = document.createElement("p");
     postBody.className = "postBody";
 
-    postTitle.innerHTML = post.title;
+    postTitle.innerHTML = "<strong>title</strong>: " + post.title;
     postBody.innerHTML = post.body;
     postContainer.appendChild(postTitle);
     postContainer.appendChild(postBody);
-    MainContainer.appendChild(postContainer);
+    SubContainer.appendChild(postContainer);
     // el.classList.remove("hide");
     // el.classList.add("hide");
   });
-
+  MainContainer.appendChild(SubContainer);
   app.appendChild(MainContainer);
 
   console.log(app);
