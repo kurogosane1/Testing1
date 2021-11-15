@@ -36,6 +36,7 @@ async function getUsers() {
   console.log(table);
   let tableH = document.createElement("span");
   tableH.textContent = "Users";
+  tableH.className = "UserH";
 
   tableHeadingContainer.appendChild(tableH);
   console.log(tableHeadingContainer);
@@ -67,13 +68,11 @@ getUsers();
 
 // Now to get the user Posts with the id provided
 async function userPost(number) {
-  const el = document.querySelector("mainContainer");
-
+  const el = document.querySelector(".userContainer");
   let parameter = posts + "?userId=" + number;
-
+  el.classList.add("hide");
+  console.log(el);
   let info = await getData(API, parameter);
-
-  console.log(info);
 
   //Go Back Button
   const backButton = document.createElement("button");
@@ -81,6 +80,7 @@ async function userPost(number) {
   backButton.textContent = "Go back";
   backButton.addEventListener("click", function (e) {
     app.removeChild(MainContainer);
+    el.classList.remove("hide");
   });
 
   // Now to setup the container
@@ -109,6 +109,8 @@ async function userPost(number) {
     postContainer.appendChild(postTitle);
     postContainer.appendChild(postBody);
     MainContainer.appendChild(postContainer);
+    // el.classList.remove("hide");
+    // el.classList.add("hide");
   });
 
   app.appendChild(MainContainer);

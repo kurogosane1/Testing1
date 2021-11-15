@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+}
+.container {
+  background: grey;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  /* min-height: 80vh; */
+  /* background: red; */
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  /* background-color: orange; */
+  /* padding: 10px 20px; */
+
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  /* border: 1px solid black; */
+  width: 500px;
+}
+
+.Users {
+  padding: 10px 20px;
+}
+.UserH {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.userTable {
+  height: 20%;
+  border-radius: 20px;
+  width: 100%;
+}
+.tableHContainer {
+  padding: 30px 20px;
+  display: flex;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+}
+.list {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 800;
+  width: 100%;
+  /* background-color: green; */
+  /* border-bottom: 1px solid grey; */
+}
+.list > span {
+  margin: auto;
+  padding: 20px 20px;
+  text-align: center;
+
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+.list > span:hover {
+  background-color: grey;
+  color: white;
+  /* border-radius: 20px; */
+  /* border-bottom: none; */
+}
+
+.hide {
+  display: none;
+}
